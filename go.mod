@@ -1,3 +1,3 @@
 module github.com/guessi/go-http-sleep
 
-go 1.18
+go 1.19
