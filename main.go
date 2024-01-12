@@ -13,7 +13,7 @@ func processRoot(w http.ResponseWriter, req *http.Request) {
 }
 
 func processSleep(w http.ResponseWriter, req *http.Request) {
-	s, err := strconv.Atoi(req.URL.Query().Get("s"))
+	s, err := strconv.Atoi(req.URL.Query().Get("ms"))
 	if err != nil || s < 1 {
 		s = 0
 		log.Print(fmt.Sprintf("/sleep request received", s))
@@ -22,7 +22,7 @@ func processSleep(w http.ResponseWriter, req *http.Request) {
 	}
 
 	fmt.Fprintf(w, "delayed for %ds", s)
-	time.Sleep(time.Second * time.Duration(s))
+	time.Sleep(time.Millisecond * time.Duration(s) )
 	log.Print("end")
 }
 

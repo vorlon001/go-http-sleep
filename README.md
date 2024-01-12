@@ -6,7 +6,7 @@ delayed response http server, useful for testing various timeout issue for appli
 
     $ go run ./main.go
 
-    $ curl 127.0.0.1:8080/sleep?s=5s # sleep 5s and return
+    $ curl 127.0.0.1:8080/sleep?ms=500 # sleep 500ms and return
     delayed for 5s
 
 alternatively, you may run it as minimal Docker image
@@ -20,7 +20,7 @@ alternatively, you may run it as minimal Docker image
     $ docker run -d -p 8080:8080 go-http-sleep
     8dad85556621c1e2077c9ff921967bd75b11ee00123dee1a2e56fb9abaf6936b
 
-    $ curl "127.0.0.1:8080/sleep?s=5"
+    $ curl "127.0.0.1:8080/sleep?ms=500"
     delayed for 5s
 
 
